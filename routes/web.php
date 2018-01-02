@@ -11,11 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/content', function () {
+    return view('content');
 });
-
-
 
 Route::get('GoiTen',Function(){
   return redirect()->route('Fukyou');
@@ -42,5 +40,9 @@ Route::get('GetUrl','MyController@GetUrl');
 Route::get('getForm',function(){
   return view('postForm');
 });
+
+Route::get('setCookie','MyController@setCookie');
+
+Route::get('getCookie','MyController@getCookie');
 
 Route::post('postForm',['as'=>'postForm','uses'=>'MyController@postForm']);
