@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/content', function () {
-    return view('content');
-});
+Route::get('/content', 'ContentController@index');
 
 Route::get('GoiTen',Function(){
   return redirect()->route('Fukyou');
@@ -46,3 +44,7 @@ Route::get('setCookie','MyController@setCookie');
 Route::get('getCookie','MyController@getCookie');
 
 Route::post('postForm',['as'=>'postForm','uses'=>'MyController@postForm']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
